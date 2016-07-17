@@ -8,10 +8,3 @@ class Test(TestCase):
         self.assertEqual(solution.isNumber("1"), True)
         self.assertEqual(solution.isNumber(""), False)
         self.assertTrue(solution.isNumber("113544566"), True)
-
-
-    def test_dot_numbers(self):
-
-        solution = Solution()
-        self.assertEqual(solution.isNumber('0.1'), True)
-        self.assertEqual(solution.isNumber('0.1a'), False)

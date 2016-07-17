@@ -1,4 +1,5 @@
 class Solution(object):
+    _dot_number=0
     def isNumber(self, s):
         """
         :type s: str
@@ -8,9 +9,15 @@ class Solution(object):
             return False
 
         s = s.strip()
-        if '.' not in s and 'e' not in s:
-            try:
-                result = int(s)
-                return True
-            except:
+        if s is None:
+            return False
+        for c in s:
+            if str.isdigit(c):
+                pass
+            elif c=='.':
+                self._dot_number+=1
+                if self._dot_number>1:
+                    return False
+            else:
                 return False
+        return True
